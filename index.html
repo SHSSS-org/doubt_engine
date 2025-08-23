@@ -568,8 +568,9 @@
     <div class="container">
         <!-- Page Header -->
         <section class="page-header">
-            <h2>Doubt Resolution Center</h2>
+            <h2>Doubt Resolution Center[alpha1.2]</h2>
             <p>Get your academic questions answered by peers and professionals</p>
+            <p>Entering beta test soon</p>
         </section>
 
         <!-- Search and Filter Section -->
@@ -613,10 +614,14 @@
             <i class="fas fa-search"></i>
             <p>No doubts found matching your search criteria</p>
         </div>
-        
+        <div class="ask-doubt">
+            <a href="https://flownetic.github.io/flovvnetic_soon/">
+            <button><i class="fas fa-plus"></i> Post YOUR QUESTION here</button>
+            </a>
+        </div>
         <!-- Ask Doubt Button -->
         <div class="ask-doubt">
-            <button class="ask-btn" id="ask-btn"><i class="fas fa-plus"></i> Ask a Doubt</button>
+            <button class="ask-btn" id="ask-btn"><i class="fas fa-plus"></i> Ask the coomunity</button>
         </div>
     </div>
 
@@ -639,8 +644,7 @@
                 
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> doubts@shsss-headlines.edu</p>
-                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> doubts@shsss.org@gmail.com</p>
                     <div class="social-icons">
                         <a href="https://flownetic.github.io/flovvnetic_soon/"><i class="fab fa-facebook"></i></a>
                         <a href="https://flownetic.github.io/flovvnetic_soon/"><i class="fab fa-instagram"></i></a>
@@ -650,7 +654,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SHSSS Headlines. All rights reserved.</p>
+                <p>&copy; 2025 SHSSS Headlines. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -664,7 +668,7 @@
         const doubts = [
             {
                 id: 1,
-                name: "Rahul Sharma",
+                name: "INAYATULA",
                 number: "STU20235",
                 question: "How do I solve quadratic equations using the quadratic formula?",
                 subject: "mathematics",
@@ -672,11 +676,11 @@
                 time: "2023-10-15 14:30",
                 status: "answered",
                 answer: "The quadratic formula is x = [-b ± √(b² - 4ac)] / (2a). Make sure to calculate the discriminant first.",
-                answeredBy: "Prof. Mathur"
+                answeredBy: "QURESH BADI"
             },
             {
                 id: 2,
-                name: "Priya Patel",
+                name: "SANIA ANSARI",
                 number: "STU20241",
                 question: "What is the difference between mitosis and meiosis?",
                 subject: "biology",
@@ -686,7 +690,7 @@
             },
             {
                 id: 3,
-                name: "Amit Kumar",
+                name: "ABDUL AHAD",
                 number: "STU20218",
                 question: "How to calculate velocity in projectile motion?",
                 subject: "physics",
@@ -698,7 +702,7 @@
             },
             {
                 id: 4,
-                name: "Sneha Desai",
+                name: "ZAKIR ALI",
                 number: "STU20229",
                 question: "What are the different types of chemical bonds?",
                 subject: "chemistry",
@@ -708,7 +712,7 @@
             },
             {
                 id: 5,
-                name: "Vikram Singh",
+                name: "MOHD TAUSIF",
                 number: "STU20233",
                 question: "How to implement binary search in Python?",
                 subject: "computer",
@@ -720,7 +724,7 @@
             },
             {
                 id: 6,
-                name: "Anjali Mehta",
+                name: "MOHD ANAS",
                 number: "STU20222",
                 question: "What is the law of conservation of energy?",
                 subject: "physics",
@@ -827,7 +831,7 @@
             document.querySelectorAll('.contact-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const name = this.closest('.doubt-card').querySelector('.user-info strong').textContent;
-                    alert(`In a real implementation, this would contact ${name}.\n\nThis might show their contact number or open a chat interface.`);
+                    alert(`In a BETA implementation, this would contact ${name}.\n\nThis will show their contact email or open a chat interface.`);
                 });
             });
             
@@ -875,13 +879,13 @@
             try {
                 const message = `❓ Question from ${doubt.name} (${doubt.number}):\n${doubt.question}\n\n✅ Answered by ${answererName}:\n${answerText}\n\nSubject: ${doubt.subject}\nTopic: ${doubt.topic}`;
                 
-                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                const response = await fetch(`8384873421:AAFSWTNbwmwhXAV1m37y1TZZsA_i-_SDV3g`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        chat_id: TELEGRAM_USER_ID,
+                        chat_id: 7789224631,
                         text: message,
                         parse_mode: 'HTML'
                     })
@@ -890,7 +894,7 @@
                 const data = await response.json();
                 return data.ok;
             } catch (error) {
-                console.error('Error sending to Telegram:', error);
+                console.error('Error sending to ADMIN:', error);
                 return false;
             }
         }
@@ -942,7 +946,7 @@
 
         // Ask doubt functionality
         askBtn.addEventListener('click', () => {
-            alert('In a real implementation, this would open a form to ask a new doubt.\n\nThe form would collect:\n- Your question\n- Subject\n- Topic\n- Your contact information');
+            alert('In a BETA implementation, this would open a form to ask a new doubt.\n\nThe form would collect:\n- Your question\n- Subject\n- Topic\n- Your contact information');
         });
 
         // Event listeners
